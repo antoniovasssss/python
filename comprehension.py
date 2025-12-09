@@ -1,4 +1,4 @@
-#Beginner
+#Beginner - List Comprehension
 # 1) List of numbers from 1 to 20
 nums_1_to_20 = [n for n in range(1, 21)]        # iterate n from 1 up to 20 inclusive and collect n
 print(nums_1_to_20)                              # show the result
@@ -84,3 +84,57 @@ print(primes)
 words = ["apple", "Banana", "avocado", "apricot"]
 reversed_words = [s[::-1] for s in words]
 print(reversed_words)
+
+
+#Dictionary Comprehension
+#beginner
+cubes = {n: n**3 for n in range(1, 6)}
+print(cubes)
+
+names = ["ram", "shyam", "hari"]
+name_lengths = {name: len(name) for name in names}
+print(name_lengths)
+
+keys = [1, 2, 3] #given keys
+values = ["a", "b", "c"] #given values
+paired = {k: v for k, v in zip(keys, values)} #pair and build dict
+print(paired) #{1: 'a', 2: 'b', 3: 'c'}
+
+#intermediate 
+d = {"a": 1, "b": 2, "c": 3} # sample input dictionary
+flipped = {v: k for k, v in d.items()} # build a new dict where each value becomes the key and each key becomes the value
+print(flipped) # show the result
+
+evens_sq = {n: n**2 for n in range(1, 21) if n % 2 == 0} # pick numbers 1..20 then keep only evens then map to square
+print(evens_sq) # show the result
+
+scores = {"x": 5, "y": 12, "z": 30, "w": 9}
+filtered = {k: v for k, v in scores.items() if v > 10}
+print(filtered)
+
+#advanced 
+s = "banana banana"
+chars = set(s)
+freq = {c: s.count(c) # map each char to how many times it appears
+        for c in chars
+        if c != " "}  # loop unique characters
+print(freq)
+
+sentence = "Fries and chicken strips for life"
+words = sentence.split() # break into words by spaces
+lenghts = {w: len(w)
+           for w in words}# loop all words
+print(lenghts)
+
+text = "Abracadabra forever"
+vowels = "aeiou"
+t = text.lower()
+vowels_counts = {v: t.count(v)
+                 for v in vowels
+                 if t.count(v) > 0}
+print(vowels_counts)
+
+
+
+#set comprehension
+#beginner
