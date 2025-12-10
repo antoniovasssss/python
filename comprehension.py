@@ -138,3 +138,98 @@ print(vowels_counts)
 
 #set comprehension
 #beginner
+squares = {n * n for n in range(1, 11)} # n goes from 1 to 10 and we add n*n to the set
+print(squares) # show the resulting set of squares
+
+nums = [1, 2, 3, 3, 3, 4, 5, 5]  # list containing repeated numbers
+unique_vals = {x for x in nums} # add each element x from the list into a set
+print(unique_vals)
+
+text = "Comprehension practice in Python" 
+
+vowels = {"a", "e", "i", "o", "u"} # define the vowel set in lowercase
+
+unique_vowels = {ch.lower() # take the lowercase version of the character
+                 for ch in text # loop through each character in the string
+                 if ch.lower() in vowels}  # keep it only if it is a vowel
+print(unique_vowels) # show the unique vowels found
+
+div_by_7 = {n  # keep the current number
+            for n in range(1, 101) # iterate from 1 through 100
+            if n % 7 == 0} # include it only if divisible by 7
+print(div_by_7) # show the set of numbers divisible by 7
+
+#advanced
+sentence = "Comprehension practice in Python" # your input sentence
+first_letters = {word[0].lower() # take the first character then normalize case
+                 for word in sentence.split()# split the sentence into words by whitespace
+                 if word} # guard against empty strings
+print(first_letters) # show the unique first letters
+
+#Create a dictionary to count vowel occurrences in a string.
+text = "Set 123 comprehension 256!"  # your input text
+
+no_digits_chars = {ch # keep the character as is
+                   for ch in text # iterate through each character
+                   if not ch.isdigit()} # exclude characters that are digits
+print(no_digits_chars) # show unique characters without digits
+
+
+
+#generator expression
+#beginner
+# create a generator that yields squares from 1 to 10
+squares = (n * n for n in range(1, 11))  # n runs from 1 to 10. each yield is n squared
+
+# consume the generator and show the results
+for value in squares: # iterate through each produced square
+    print(value) # print the current square
+
+#Create a generator that yields even numbers from 1–50.
+evens = (n for n in range(1, 51) if n % 2 == 0) # n runs 1 to 50. keep n only if n mod 2 equals zero
+
+for value in evens: # iterate through each even number
+    print(value) # print the current even number
+
+#intermediate
+#Create a generator for Fibonacci numbers (first 10 values)
+def fib (n):
+    a = 0
+    b = 1
+    for _ in range(n):
+        yield a
+        a, b, = b, a + b
+
+first_ten = fib(10)
+for value in first_ten:
+    print(value)
+
+#Generator that yields characters of a string one-by-one
+text = "Hello world"
+
+chars = (ch for ch in text) # generator expression that produces each character
+
+for ch in chars: # iterate through each produced character
+    print(ch) # print the current character
+
+#advanced
+#Create a generator that produces infinite multiples of 5
+def multiples_of_5():
+    n = 1 # start at the first multiple index
+    while True: # loop forever to make an infinite stream
+        yield 5 * n # produce the current multiple
+        n += 1 # move to the next index
+
+from itertools import islice # tool to slice an iterator
+first_ten = list(islice(multiples_of_5(), 10)) # pull ten values lazily
+print(first_ten) # prints [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+
+#Create a generator that reads a file line by line
+def read_lines(path):
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f: # the file yields one line at a time
+            yield line.rstrip("\n") # strip the newline and yield lazily
+
+for line in read_lines("data.txt"): # replace with your file path
+
+    print(line)
