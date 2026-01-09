@@ -5,7 +5,7 @@ def get_average_age(people):
     for person in people:
         # add each person's age to the total
         total_age += person["age"]
-    # divides the total by the number of people to get the average
+    # divides the total by the number of people to get the average of all people
     return total_age / len(people)
 
 
@@ -26,4 +26,3 @@ people = [
 ]
 
 print(get_average_age(people))
-
