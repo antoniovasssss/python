@@ -1,11 +1,9 @@
-def ends_with_t(s: str) -> bool:
-    # make sure s is a string in case someone passes a non string
-    s = str(s)
-    # return True if s ends with the lowercase letter t otherwise False
-    return s.endswith("t")
+def ends_with_t(text):
+    return text[-1] == "t" # the expression text[-1] accesses the last character of the string.
+    # then == "t" checks if that character is equal to "t", returning True or False
+    
 
-if __name__ == "__main__":
-    print(ends_with_t("smart"))      # True
-    print(ends_with_t("racket"))     # True
-    print(ends_with_t("taco"))       # False
-    print(ends_with_t("boomerang"))  # False
+print(ends_with_t("smart"))     
+print(ends_with_t("racket"))     
+print(ends_with_t("taco"))       
+print(ends_with_t("boomerang"))
