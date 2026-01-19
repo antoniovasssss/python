@@ -1,9 +1,9 @@
 # Create a list of friends
-friends = ["philip", "abby", "phelipe", "simcha"]
+friends1 = ["philip", "abby", "phelipe", "simcha"]
+friends2 = ["antonio", "ratesh", "joleen", "arnold"]
 
-# Outer loop: iterate through each index of the friends list
-for i in range(len(friends)):
-    # Inner loop: iterate through each index again for pairing
-    for j in range(len(friends)):
-        # Print the pair of names at positions i and j
-        print(friends[i], friends[j])
+
+for i in range(len(friends1)):
+    for j in range(len(friends2)):
+        print(friends1[i], friends2[j])
+    print()

@@ -1,17 +1,19 @@
+# Write a function `two_sum(numbers, target)` that accepts a list of numbers and a target number.
+# The function should return True if there exists a pair of distinct elements in the list that sum to the target.
+# Otherwise, return False.
+
 def two_sum(numbers, target):
-    seen = set()
-    for x in numbers:
-        y = target - x # the complement we need 
-        if y in seen:
-            # found two distinct elements: y (seen earlier) and x (current)
-            return True
-        seen.add(x)
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            if numbers[i] + numbers[j] == target:
+                return True
+    
     return False
 
+# Example:
+two_sum([2, 3, 5, 9], 7) #-> True
+two_sum([2, 3, 5, 9], 4) #-> False
+two_sum([6, 3, 4], 10) #-> True
+two_sum([6, 5, 1], 10) #-> False
 
-print(two_sum([2, 3, 5, 9], 7))   
-print(two_sum([2, 3, 5, 9], 4))   
-print(two_sum([6, 3, 4], 10))     
-print(two_sum([6, 5, 1], 10))     
-print(two_sum([5, 5], 10))          
-print(two_sum([5], 10))           
+           
