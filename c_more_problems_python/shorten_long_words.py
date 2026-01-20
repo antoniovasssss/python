@@ -2,19 +2,23 @@
 # the same sentence where words longer than 4 characters have their vowels removed.
 
 def shorten_long_words(sentence):
-    vowels = set("aeiouAEIOU")
+    vowels = "aeiouAEIOU"
+    words = sentence.split() # split the sentence into individual 
     result = []
-    # split the sentence by spaces
-    for token in sentence.split():
-    # for each word/token: if its length is more than 4, remove vowels
-        if len(token) > 4:
-            token = "".join(ch for ch in token if ch not in vowels)
-            result.append(token)
-            # join everything back with spaces
-    return " ".join(result)
 
+    for word in words:
+        if len(word) > 4: # if length is greater > 4, remove all vowels
+            shortened = ""
+            for char in word:
+                if char not in vowels:
+                    shortened += char
+            result.append(shortened)
+        else:
+            result.append(word)
+
+    return ' '.join(result) # join all words back together with spaces
 
 # Example usage:
-print(shorten_long_words("they are very noble people"))
-print(shorten_long_words("stick with it"))
-print(shorten_long_words("ballerina, you must have seen her"))  
+print(shorten_long_words("they are very noble people"))  
+print(shorten_long_words("stick with it"))  
+print(shorten_long_words("ballerina, you must have seen her")) 

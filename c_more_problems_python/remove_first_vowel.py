@@ -2,18 +2,14 @@
 # with its first vowel removed.
 
 def remove_first_vowel(s):
-    # define what counts as a vowel, both lowercase and uppercase
-    vowels = "aeiouAEIOU"
-    # loop through the string character by character
-    for i, char in enumerate(s):
-        # if the first vowel is found it's removed using string slicing
-        if char in vowels:
-            return s[:i] + s[i + 1:]
-        # if the string contains no vowels the original string is returned
-    return s
+    vowels = "aeiouAEIOU" # define all vowels
+    for i in range(len(s)): # loop through each character by index
+        if s[i] in vowels:
+            return s[:i] + s[i+1:] # everything before & after the vowel
+    return s # if no vowel is found, return the original string
+
 
 # Example usage:
-print(remove_first_vowel("volcano")) 
+print(remove_first_vowel("volcano"))  
 print(remove_first_vowel("celery")) 
-print(remove_first_vowel("juice")) 
-
+print(remove_first_vowel("juice"))
