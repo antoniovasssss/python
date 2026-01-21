@@ -1,14 +1,9 @@
+# Write a function `string_iterate(text)` that prints each character of the string.
+
 def string_iterate(text):
-     # define a function named string_iterate that takes one parameter called text
+    for char in text: # the for loop iterates directly over each character in the string
+        print(char) # each character is printed on its own line
 
-    for ch in text:
-    # start a loop that visits each character in the string text in order
+string_iterate("celery")
+string_iterate("hat")
 
-        print(ch)
-         # print the current character on its own line
-
-if __name__ == "__main__":
-    # run the examples only when this file is executed directly
-
-    string_iterate("celery") # prints c e l e r y one per line
-    string_iterate("hat") # prints h a t one per line

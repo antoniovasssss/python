@@ -1,13 +1,10 @@
-def find_char_positions(s: str, ch: str) -> None:
-    # ensure the target is a single character so the intent is clear
-    if len(ch) != 1:
-        # early return if the input is not a single character
-        return
-    # loop over the string while keeping the index with enumerate
-    for i, c in enumerate(s):
-        # check if the current character equals the target character
-        if c == ch:
-            # print the index when we find a match
-            print(i)
-            
+# Write a function that prints all **indexes** where a character appears in a string.
+
+def find_char_positions(text, char):
+    for i in range(len(text)): # this generates indices from 0 to the length of the string minus i, for each index i, we check...
+        if text[i] == char: # if text[i] equals the character we're searching for, if it matches...
+            print(i) # we print print that index
+
+
+
 find_char_positions("banana", "a")

@@ -1,11 +1,20 @@
-def sum_of_range(n): # define a function that takes n
-    if n < 1: # guard for non positive input
-        return 0 # return 0 so the loop is skipped
-        
-    total = 0 # start an accumulator at 0
-    
-    for i in range(1, n + 1): # loop from 1 to n inclusive
-        total += i # add each i to total
-    return total # return the sum
-    
-print(sum_of_range(5)) # call the function and print the result
+# Write `sum_of_range(n)`
+
+# Print the sum of numbers from 1 to n.
+
+def sum_of_range(n):
+    total = 0 # initialize total to 0
+    for i in range(1, n + 1): # loop through numbers from 1 to n (inclusive) just says go from 1 to n(5)
+        total += i # add each number to total
+    print(total) # print the final sum
+
+sum_of_range(5)
+
+# When we call sum_of_range(5), we're adding all numbers from 1 to 5:
+
+# 1 + 2 + 3 + 4 + 5 = ?
+
+# 1 + 2 = 3
+# 3 + 3 = 6
+# 6 + 4 = 10
+# 10 + 5 = 15
