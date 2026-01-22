@@ -1,9 +1,10 @@
-def no_ohs(text: str) -> None:  # define a function that takes a string and returns nothing
-    for ch in text: # iterate one character at a time
-        if ch == 'o': # check if the character is the lowercase letter o
-            continue # skip printing this character
-        print(ch) # print allowed characters on their own line
-        
+# Write a function `no_ohs(text)` that prints each character of the string except 'o'.
+# The function does not return a value, just prints.
+
+def no_ohs(text):
+    for char in text: # for each char...
+        if char != 'o': # it checks if its not equal to 'o', if the char is anything other than 'o'...
+            print(char) # it prints it on its own line
+
+# Example:
 no_ohs("code")
-no_ohs("book")
-no_ohs("hello")
