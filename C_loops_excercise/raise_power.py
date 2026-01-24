@@ -1,18 +1,14 @@
+# Write a function `raise_power(base, exponent)` that returns the result of
+# base raised to the exponent using loops (do not use ** operator or math.pow).
+
 def raise_power(base, exponent):
-    # Initialize result as 1 because any number raised to 0 is 1
-    result = 1
-    
-    # Loop 'exponent' times to multiply base repeatedly
-    for _ in range(exponent):
-        # Multiply current result by base in each iteration
-        result *= base
-    
-    # After the loop, result holds base^exponent
-    return result
+    result = 1 # starts with result = 1 (since multiplying by 1 doesn't change the value)
+    for i in range(exponent): # loops exponent times
+        result *= base # each time through the loop, multiplies result by base
+    return result # returns the final result
 
-# Examples:
-print(raise_power(2, 5))  
-print(raise_power(4, 3))   
-print(raise_power(10, 4))  
-print(raise_power(7, 2))   
 
+raise_power(2, 5) 
+raise_power(4, 3) 
+raise_power(10, 4)
+raise_power(7, 2)  
