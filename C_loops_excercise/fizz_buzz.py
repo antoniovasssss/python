@@ -1,10 +1,13 @@
-def fizz_buzz(max_num):
-    # Loop through all numbers from 1 up to max_num (inclusive)
-    for num in range(1, max_num + 1):
-        # Check if the number is divisible by 3 or 5 but NOT both
-        if (num % 3 == 0 or num % 5 == 0) and not (num % 3 == 0 and num % 5 == 0):
-            # If condition is true, print the number
-            print(num)
+# Write a function `fizz_buzz(max_num)` that prints all numbers <= max_num
+# that are divisible by 3 or 5 but not both.
+# The function does not return a value, just prints.
 
-fizz_buzz(18) 
-fizz_buzz(33) 
+def fizz_buzz(max_num):
+    for i in range(1, max_num + 1): # loops through numbers from 1 to max_num
+        if (i % 3 == 0 or i % 5 == 0) and not (i % 3 == 0 and i % 5 == 0): # checks if the number is divisible by 3 or 5 but not both
+            print(i) # prints the number if it meets the condition
+
+
+fizz_buzz(18)
+
+fizz_buzz(33)
