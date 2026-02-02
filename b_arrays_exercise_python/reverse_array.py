@@ -1,6 +1,8 @@
-def reverse_array(arr):
-    # use slicing to reverse the list
-    return arr[::-1]
+# Write a function `reverse_array(arr)` that accepts a list as an argument.
+# The function should return a list containing the elements of the original list in reverse order.
 
-print(reverse_array(["zero", "one", "two", "three"]))
-print(reverse_array([7, 1, 8]))
+def reverse_array(arr):
+    return arr[::-1] # slice notation with a step of -1 to create a reversed copy of the list
+
+reverse_array(["zero", "one", "two", "three"])
+reverse_array([7, 1, 8])
