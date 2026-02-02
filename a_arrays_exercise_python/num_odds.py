@@ -1,10 +1,13 @@
+# Write a function `num_odds(numbers)` that accepts a list of numbers.
+# The function should return the count of odd numbers in the list.
+
 def num_odds(numbers):
-    # Uses a generator expression inside sum()
-    # For each num in numbers, check if num % 2 != 0 (odd)
-    # If true, add 1 to the sum
-    return sum(1 for num in numbers if num % 2 != 0)
+    count = 0 # variable count that is initialized to 0
+    for num in numbers: # a loop that iterates through each element in the numbers list
+        if num % 2 != 0: # checks if the current number is odd
+            count += 1 # if the number is odd, increment the count by 1
+    return count # return the total count of odd numbers
 
-
-print(num_odds([4, 7, 2, 5, 9]))         
-print(num_odds([11, 31, 58, 99, 21, 60])) 
-print(num_odds([100, 40, 4]))             
+num_odds([4, 7, 2, 5, 9]) 
+num_odds([11, 31, 58, 99, 21, 60]) 
+num_odds([100, 40, 4]) 

@@ -1,10 +1,8 @@
+# Write a function `strings_to_lengths(strings)` that accepts a list of strings.
+# The function should return a new list containing the lengths of each string.
+
 def strings_to_lengths(strings):
-    # Uses list comprehension to iterate through each string in strings.
-    # Applies len() to get the length of each string.
-    # Returns a new list with those lengths.
-    return [len(s) for s in strings]
+    return [len(string) for string in strings]
 
-
-print(strings_to_lengths(["belly", "echo", "irony", "pickled"]))
-
-print(strings_to_lengths(["on", "off", "handmade"]))
+strings_to_lengths(["belly", "echo", "irony", "pickled"]) 
+strings_to_lengths(["on", "off", "handmade"]) 

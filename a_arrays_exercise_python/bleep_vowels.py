@@ -1,10 +1,20 @@
-def bleep_vowels(text):
-    # We define a string vowels containing all lowercase and uppercase vowels.
-    vowels = "aeiouAEIOU"
-    # If char is a vowel, replace it with '*'.
-    return ''.join('*' if char in vowels else char for char in text)
 
-bleep_vowels("skateboard")
-bleep_vowels("skipper")
+# Write a function `bleep_vowels(text)` that accepts a string and returns
+# a new string where all vowels (a, e, i, o, u) are replaced with '*'.
+
+def bleep_vowels(text):
+    vowels = "aeiouAEIOU"
+    result = ""
+    for char in text:
+        if char in vowels:
+            result += '*'
+        else:
+            result += char
+    return result
+
+
+bleep_vowels("skateboard") 
+bleep_vowels("slipper")
 bleep_vowels("range")
 bleep_vowels("brisk morning")
+
