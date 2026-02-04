@@ -1,15 +1,18 @@
+# Write a function `number_range(min_val, max_val, step)` that accepts three numbers as arguments.
+# The function should return a list of numbers starting from min_val to max_val (inclusive),
+# incremented by step.
+
 def number_range(min_val, max_val, step):
-    # initialize an empty list
-    result = []
+    result = [] # create an empty list to store the numbers 
+    current = min_val # start with current set to min_val
 
-    # start from min_val and keep adding step until we exceed max_val
-    current = min_val
-    while current <= max_val:
-        result.append(current)
-        current += step
+    while current <= max_val: # while current is less than or equal to max_val...
+        result.append(current) # add it to the result list
+        current += step # increment current by step
 
-    return result
+    return result # return the complete list
 
-print(number_range(10, 40, 5))
-print(number_range(8, 35, 6))
-print(number_range(14, 24, 3))
+
+number_range(10, 40, 5)
+number_range(14, 24, 3) 
+number_range(8, 35, 6)

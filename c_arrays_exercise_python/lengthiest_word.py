@@ -1,19 +1,19 @@
+# Write a function `lengthiest_word(sentence)` that accepts a string containing a sentence.
+# The function should return the longest word in the sentence.
+# If there is a tie, return the word that appears later in the sentence.
+
 def lengthiest_word(sentence):
-    # split the sentence into words
-    words = sentence.split()
+    words = sentence.split() # split the sentence into a list of words using split()
+    longest = words[0] # initialize longest with the first word
 
-    # initialize variables to track the longest word and its length
-    longest_word = ""
-    max_length = 0
-    
-    # iterate through the words
-    for word in words:
-        if len(word) >= max_length: # Use >= to prioritize later words in case of a tie
-            longest_word = word
-            max_length = len(word)
-    return longest_word
+    for word in words: # iterate through each word in the list
+        if len(word) >= len(longest): # using >= ensures that if a word has the same length as the current longest, it replaces it 
+            longest = word
 
-print(lengthiest_word("I am pretty hungary"))
-print(lengthiest_word("we should think outside of the box"))
-print(lengthiest_word("down the rabbit hole"))
-print(lengthiest_word("simmer down"))     
+    return longest # return the longest word found
+
+
+lengthiest_word("I am pretty hungry") 
+lengthiest_word("we should think outside of the box")
+lengthiest_word("down the rabbit hole") 
+lengthiest_word("simmer down")
