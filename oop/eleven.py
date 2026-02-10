@@ -22,4 +22,4 @@ class Student:
 
 Student.show_school()
 
-s1.show_school()
+s1.show_school() # object calling class method s1: Student
