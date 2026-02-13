@@ -604,6 +604,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "fastapi" },
     { name = "openai" },
+    { name = "pydantic" },
 ]
 
 [package.dev-dependencies]
@@ -615,6 +616,7 @@ dev = [
 requires-dist = [
     { name = "fastapi", specifier = ">=0.123.7" },
     { name = "openai", specifier = ">=2.8.1" },
+    { name = "pydantic", specifier = ">=2.12.5" },
 ]
 
 [package.metadata.requires-dev]
