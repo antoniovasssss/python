@@ -11,4 +11,4 @@ class User(BaseModel):
             raise ValueError("Age must be 18 or older") # this is a logic error, the code only raises an error when it is less than 18 
         return value
         
-User(name="Ant", age=11)
+User(name="Ant", age=17)
